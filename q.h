@@ -25,8 +25,6 @@ Node NewItem() {
 	return node;
 }
 
-
-
 // Adds a queue item to
 void AddQueue( Node **head, Node *item )
 {
@@ -38,58 +36,18 @@ void AddQueue( Node **head, Node *item )
     }
     else
     {
-        **head.prev->next = item;
-        item->prev = head->prev->next;
-        item->next = head;
-        head->prev = item;
+        (*head)->prev->next = item;
+        item->prev = (*head)->prev->next;
+        item->next = *head;
+        (*head)->prev = item;
     }
-
 }
 
 // Deletes queue, returns deleted queue pointer
-struct Node* DelQueue( Node &head )
+struct Node* DelQueue( Node **head )
 {
-	Node *h = &head;
-    //head.next = head.next->next;
-    //head = h->next;
 
 
-
-	/*Node *h= &head;
-	h->payload = 99;
-	cout << h << "\n";
-
-
-	head = *h->next;
-	head.prev = h->prev;
-	head.prev->next = &head;
-	//head.payload = 101;
-
-
-
-	//Node temp = head;
-	// cout << head << "\n";
-	 // cout << &head << "\n";
-	//Node *temp = &head;
-	 // cout << temp << "\n";;
-
-	 //head = *temp->next;
-	// cout << head.next << " " << head.next->payload << "\n";
-	// cout << head.payload << "\n";
-	//cout << temp << "\n";
-	//cout << &head << "\n";
-	//head = *head.next;
-	// cout << head.payload << "\n";
-	// cout << head.next << " " << head.next->payload << "\n";
-	//head = head->next;
-
-	//cout << temp << "\n";
-	//cout << &head << "\n";
-
-	//head = temp.next;
-	//cout << "\n" << &temp.prev << "\n\n";
-	//head.prev = temp->prev;
-	// temp->prev->next = &head;*/
 
 	return h;
 }

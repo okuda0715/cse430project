@@ -14,7 +14,13 @@ int main() {
     AddQueue(&head, &a1);
     cout << &head << endl;
     cout << head->next << endl << head << endl << head->prev << endl;
-    cout << a1.next << endl << &a1 << endl <<  a1.prev;
+    cout << a1.next << endl << &a1 << endl <<  a1.prev << endl;
+    Node a2 = NewItem();
+    AddQueue(&head, &a2);
+    cout << head->next << endl << head << endl << head->prev << endl;
+    Node a3 = NewItem();
+    AddQueue(&head, &a3);
+    cout << head->next << endl << head << endl << head->prev << endl;
 
 
 	/*Node *test;
