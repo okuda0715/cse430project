@@ -7,38 +7,55 @@ struct Node {
 	int payload;
 	Node *next;
 };
-//Node *head = 0; // Head Pointer
+
+// Initializes the first node of a queue to 0 and to point to itself.
+// Parameter:
+void InitQueue( Node **head ) {
+    *head = NULL;
+}
 
 // Returns a pointer to a new q-element
-Node* NewItem() {
-	Node *node = new Node();
+Node NewItem() {
+	Node node;
 
-	node->payload = 0;
-	node->next = node;
-	node->prev = node;
+	node.payload = 0;
+	node.next = NULL;
+	node.prev = NULL;
 
 	return node;
 }
 
-// Initializes the first node of a queue to 0 and to point to itself. Should be used for
-// re-initializing a Node. 
-// Parameter: 
-void InitQueue( Node &head ) {
-	head.payload = 0;
-	head.prev = &head;
-	head.next = &head;
-}
 
-// Adds a queue item to 
-void AddQueue( Node &head, Node item ) {
-	//item->next = head;
 
+// Adds a queue item to
+void AddQueue( Node **head, Node *item )
+{
+    if(*head == NULL)
+    {
+        item->next = item;
+        item->prev = item;
+        *head = item;
+    }
+    else
+    {
+        **head.prev->next = item;
+        item->prev = head->prev->next;
+        item->next = head;
+        head->prev = item;
+    }
 
 }
 
 // Deletes queue, returns deleted queue pointer
-struct Node* DelQueue( Node &head ) {
-	Node *h= &head;
+struct Node* DelQueue( Node &head )
+{
+	Node *h = &head;
+    //head.next = head.next->next;
+    //head = h->next;
+
+
+
+	/*Node *h= &head;
 	h->payload = 99;
 	cout << h << "\n";
 
@@ -69,10 +86,10 @@ struct Node* DelQueue( Node &head ) {
 	//cout << temp << "\n";
 	//cout << &head << "\n";
 
-	//head = temp.next;	
+	//head = temp.next;
 	//cout << "\n" << &temp.prev << "\n\n";
 	//head.prev = temp->prev;
-	// temp->prev->next = &head;
+	// temp->prev->next = &head;*/
 
 	return h;
 }
@@ -80,7 +97,7 @@ struct Node* DelQueue( Node &head ) {
 // Rotates the head pointer to the next item in the queue
 void RotateQ( Node &head ) {
 	//Has not been tested
-	head = *head.next;	
+	head = *head.next;
 }
 
 

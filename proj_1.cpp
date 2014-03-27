@@ -5,22 +5,36 @@
 using namespace std;
 
 int main() {
-	Node *test;
+
+
+
+    Node *head;
+    InitQueue(&head);
+    Node a1 = NewItem();
+    AddQueue(&head, &a1);
+    cout << &head << endl;
+    cout << head->next << endl << head << endl << head->prev << endl;
+    cout << a1.next << endl << &a1 << endl <<  a1.prev;
+
+
+	/*Node *test;
 
 	cout << test << "\n";
 	cout << "& " << &test << "\n\n";
-	
+
 	test = new Node();
+	cout << "new Node()\n";
 	cout << test << "\n";
 	cout << "& " << &test << "\n\n";
-	
+
 	test = NewItem();
+	cout << "newItem\n";
 	cout << test << "\n";
 	cout << "& " << &test << "\n\n";
 
 	test->payload = 15;
 
-	cout << test->prev << "\n";	
+	cout << test->prev << "\n";
 	cout << test << " " << test->payload << "\n";
 	cout << test->next << "\n\n";
 
@@ -40,13 +54,13 @@ int main() {
 	c->next = test;
 	test->prev = c;
 
-	cout << test->prev << " " << test->prev->payload << "\n";	
+	cout << test->prev << " " << test->prev->payload << "\n";
 	cout << test << " " << test->payload << "\n";
 	cout << test->next << " " << test->next->payload << "\n\n";
-	
+
 	InitQueue(*test);
-	
-	cout << test->prev << " " << test->prev->payload << "\n";	
+    cout << "InitQueue\n";
+	cout << test->prev << " " << test->prev->payload << "\n";
 	cout << test << " " << test->payload << "\n";
 	cout << test->next << " " << test->next->payload << "\n\n";
 
@@ -65,26 +79,26 @@ int main() {
 	b1->prev = a1;
 	b1->next = c1;
 	c1->prev = b1;
-	c1->next = a1;
+	c1->next = a1;*/
 
-	
-	//Print head
-	cout << a1->prev << " " << a1->prev->payload << "\n";	
+
+
+	/*//Print head
+	cout << a1->prev << " " << a1->prev->payload << "\n";
 	cout << a1 << " " << a1->payload << "\n";
 	cout << a1->next << " " << a1->next->payload << "\n\n";
 
 	Node *delA = DelQueue(*a1);
-
-	cout << "\n" <<  a1->prev << " " << a1->prev->payload << "\n";	
+	cout << "\n" <<  a1->prev << " " << a1->prev->payload << "\n";
 	cout << a1 << " " << a1->payload << "\n";
 	cout << a1->next << " " << a1->next->payload << "\n\n";
 
 
 	//Print Deleted Element
 	cout << "\nDeleted Item\n";
-	cout << delA->prev << " " << delA->prev->payload << "\n";	
+	cout << delA->prev << " " << delA->prev->payload << "\n";
 	cout << delA << " " << delA->payload << "\n";
-	cout << delA->next << " " << delA->next->payload << "\n\n";
+	cout << delA->next << " " << delA->next->payload << "\n\n";*/
 
 
 
