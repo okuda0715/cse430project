@@ -20,7 +20,18 @@ int main() {
     cout << head->next << endl << head << endl << head->prev << endl;
     Node a3 = NewItem();
     AddQueue(&head, &a3);
+
+    cout << "\n 3 elements \n";
     cout << head->next << endl << head << endl << head->prev << endl;
+
+    RotateQ(&head);
+    RotateQ(&head);
+
+
+
+    cout << head->next << endl << head << endl << head->prev << endl;
+
+
 
 
 	/*Node *test;

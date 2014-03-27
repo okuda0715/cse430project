@@ -37,7 +37,7 @@ void AddQueue( Node **head, Node *item )
     else
     {
         (*head)->prev->next = item;
-        item->prev = (*head)->prev->next;
+        item->prev = (*head)->prev;
         item->next = *head;
         (*head)->prev = item;
     }
@@ -46,16 +46,29 @@ void AddQueue( Node **head, Node *item )
 // Deletes queue, returns deleted queue pointer
 struct Node* DelQueue( Node **head )
 {
+    Node *temp;
+    if(*head == NULL)
+        return NULL;
+    else if((*head)->next == *head)
+    {
+        temp = *head;
+        *head = NULL;
+    }
+    else
+    {
+        temp = *head;
+        (*head)->next->prev = (*head)->prev;
+        (*head)->prev->next = (*head)->next;
+        (*head) = (*head)->next;
+    }
 
-
-
-	return h;
+	return temp;
 }
 
 // Rotates the head pointer to the next item in the queue
-void RotateQ( Node &head ) {
+void RotateQ( Node **head ) {
 	//Has not been tested
-	head = *head.next;
+	*head = (*head)->next;
 }
 
 
