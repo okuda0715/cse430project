@@ -6,8 +6,9 @@
 
 
 TCB_t *head;
-double x;
+double *z = (double*)malloc(sizeof(double));
 int y;
+int x;
 
 // ever increasing number
 void f1()
@@ -39,11 +40,11 @@ void f2()
 
 void f3()
 {
-	x = 0.5;
+	(*z) = 0.5;
 	while(1)
 	{
-		cout << x << endl;
-		x++;
+		(*z)= (*z) + 1;
+		cout << (*z) << endl;
 		yield();
 	}
 }
@@ -70,6 +71,8 @@ int main()
     // queue 2 functions
     start_thread(f1);
     start_thread(f2);
+    start_thread(f3);
+    start_thread(f4);
     // run them
     run();
     return 0;

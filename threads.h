@@ -30,9 +30,10 @@ void run()
 // the next context in the queue
 void yield()
 {
-	ucontext_t from, to;
-	from = head->context;
+	ucontext_t *from, *to;
+	from = &(head->context);
+	
 	RotateQ(&head);
-	to = head->context;
-	swapcontext(&from,&to);
+	to = &(head->context);
+	swapcontext(from,to);
 }
