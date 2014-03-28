@@ -6,6 +6,9 @@
 
 
 TCB_t *head;
+double x;
+int y;
+
 // ever increasing number
 void f1()
 {
@@ -14,7 +17,7 @@ void f1()
     {
         cout << x << endl;
         x++;
-	yield();
+		yield();
     }
 }
 
@@ -32,6 +35,30 @@ void f2()
         }
         yield();
     }
+}
+
+void f3()
+{
+	x = 0.5;
+	while(1)
+	{
+		cout << x << endl;
+		x++;
+		yield();
+	}
+}
+
+void f4() 
+{
+	int y = 0;
+	x = 0.5;
+	while(1)
+	{
+		cout << x << " " << y << endl;
+		x++;
+		y++;
+		yield();
+	}
 }
 
 int main()
